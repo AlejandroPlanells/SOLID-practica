@@ -20,16 +20,16 @@ public class FileSystemBuilder {
 
     public FileSystemBuilder addFile(String name, int size) {
         FileSystemItem file = new File(currentDirectory, name);
-        file.open();
-        file.write(new byte[size]);
-        file.close();
-        currentDirectory.addFile(file);
+        ((File) file).open();
+        ((File) file).write(new byte[size]);
+        ((File) file).close();
+        ((Directory)currentDirectory).addFile(file);
         return this;
     }
 
     public FileSystemBuilder addDirectory(String name) {
         FileSystemItem directory = new Directory(currentDirectory, name);
-        currentDirectory.addFile(directory);
+        ((Directory)currentDirectory).addFile(directory);
         currentDirectory = directory;
         return this;
     }

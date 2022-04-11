@@ -3,7 +3,7 @@ package com.kreitek.files;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Directory extends FileSystemItemBase implements FileSystemItem {
+public class Directory extends FileSystemItemBase implements FileSystemDirectory {
 
     private static final String NO_ES_VALIDO_PARA_DIRECTORIOS = "No es válido para directorios";
     private final List<FileSystemItem> files;
@@ -12,11 +12,6 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
         super(parent, name);
         files = new ArrayList<>();
         // Aquí vendría lógica que rellena la lista de ficheros
-    }
-
-    @Override
-    public String getExtension() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
     }
 
     @Override
@@ -42,28 +37,4 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
         throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
     }
 
-    @Override
-    public void open() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
-    }
-
-    @Override
-    public void setPosition(int numberOfBytesFromBeginning) {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
-    }
-
-    @Override
-    public byte[] read(int numberOfBytesToRead) {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
-    }
-
-    @Override
-    public void write(byte[] buffer) {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
-
-    }
-
-    public void close() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
-    }
 }
