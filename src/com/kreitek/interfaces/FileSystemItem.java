@@ -1,12 +1,12 @@
-package com.kreitek.files;
+package com.kreitek.interfaces;
 
-import java.util.List;
+import com.kreitek.files.Directory;
 
 public interface FileSystemItem {
     String getName();
     void setName(String name);
-    FileSystemItem getParent();
-    void setParent(FileSystemItem directory);
+    Directory getParent();
+    void setParent(Directory directory);
 
     String getFullPath();
     int getSize();

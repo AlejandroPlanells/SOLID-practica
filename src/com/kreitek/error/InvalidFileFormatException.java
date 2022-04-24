@@ -1,4 +1,4 @@
-package com.kreitek.files.error;
+package com.kreitek.error;
 
 public class InvalidFileFormatException extends RuntimeException {
     public InvalidFileFormatException(String message) {
